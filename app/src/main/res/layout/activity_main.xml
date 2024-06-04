@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white_red">
+
+    <RadioGroup
+        android:id="@+id/rg_percentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/tv_percent"
+        app:layout_constraintStart_toStartOf="@+id/tv_percent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_percent">
+
+        <RadioButton
+            android:id="@+id/rb_one"
+            android:text="10%"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rb_two"
+            android:text="15%"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rb_three"
+            android:text="20%"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonCalculater"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="6dp"
+        android:backgroundTint="@color/green"
+        android:text="calcular"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_guide_line_center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total_valor" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/btn_guide_line_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/yellow"
+        android:text="limpar"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_guide_line_center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total_valor" />
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="O valor total para cada pessoa é:"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.61"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
+
+    <TextView
+        android:id="@+id/tv_total_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="12"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textColor="@color/green"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total"
+        tools:text="R$ 100.00" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Happy Account"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/tv_subTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bora dividir a conta?"
+        android:textStyle="italic"
+        android:textColor="@color/green"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_subTitleTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Preencha os campos para realizar divisão da conta."
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subTitle"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subTitleTwo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_valor"
+            android:maxLength="8"
+            android:background="@drawable/rounded_bg"
+            android:drawableEnd="@drawable/cash_vector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite o valor total da conta: ex 100.00"
+            android:inputType="numberDecimal"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_numberPeople"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ti_total">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_pessoas"
+            android:maxLength="4"
+            android:background="@drawable/rounded_bg"
+            android:drawableEnd="@drawable/group_people_vector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite a quantidade de pessoas: ex 5"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_percent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Escolha o percentual da taxa de serviço"
+        android:textStyle="bold"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginTop="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ti_numberPeople" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
