@@ -21,6 +21,24 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var percentege: Int = 0
+
+        binding.rbOne.setOnCheckedChangeListener{ _, isChecked ->
+            if(isChecked){
+                percentege = 10
+            }
+        }
+        binding.rbTwo.setOnCheckedChangeListener{ _, isChecked ->
+            if(isChecked){
+                percentege = 15
+            }
+        }
+        binding.rbThree.setOnCheckedChangeListener{ _, isChecked ->
+            if(isChecked){
+                percentege = 20
+            }
+        }
+
         binding.buttonCalculater.setOnClickListener{
             val numberOfPeopleStr : String = binding.edtPessoas.text.toString()
             val costAccountStr : String = binding.edtValor.text.toString()
@@ -36,9 +54,22 @@ class MainActivity : AppCompatActivity() {
 
                 val numberOfPeople = numberOfPeopleStr.toFloat()
                 val costAccount = costAccountStr.toFloat()
+
                 val totalCostAccount = costAccount / numberOfPeople
-                val costFinal = findViewById<TextView>(R.id.tv_total_valor)
-                costFinal.text =  "R$ " + totalCostAccount.toString()
+                val tips = totalCostAccount * percentege / 100
+                val totalAccountWhitTip = totalCostAccount + tips
+                binding.tvTotalValor.text = "R$  $totalAccountWhitTip"
+
+                binding.buttonReset.setOnClickListener {
+                    binding.tvTotalValor.text = ""
+                    binding.edtPessoas.setText("")
+                    binding.edtValor.setText("")
+                    binding.rbOne.isChecked = false
+                    binding.rbTwo.isChecked = false
+                    binding.rbThree.isChecked = false
+
+                }
+
             }
         }
     }
